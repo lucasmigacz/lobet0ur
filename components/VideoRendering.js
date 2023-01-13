@@ -1,22 +1,36 @@
 import styles from "../styles/VideoRendering.module.css";
 import { IoCloseOutline } from "react-icons/io5";
+import { useClickAway } from "react-use";
+import { useRef } from "react";
 
 const VideoRendering = ({ setVideoState, videoState }) => {
   const handleClose = () => {
     setVideoState((prev) => !prev);
   };
+  // const ref = useRef(null);
+  // useClickAway(ref, () => {
+  //   setVideoState(false);
+  // });
+
+  const ref = useRef(null);
+  useClickAway(ref, () => {
+    setVideoState(false);
+  });
   return (
     <>
       <div className={styles.VideoRendering}>
         <iframe
-          width="1280"
-          height="720"
           src="https://www.youtube.com/embed/Cgxv2-HP5xI"
           title="Pacifists Reacts To MMA Knockouts"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
           className={styles.videoYt}
+          ref={ref}
+          style={{
+            width: 1000,
+            height: 600,
+          }}
         />
         <IoCloseOutline
           size={50}
