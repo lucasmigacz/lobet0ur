@@ -1,0 +1,141 @@
+.MainContentWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 120px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* LEMBRAR DE FAZER VÁRIOS MEDIA QUERIES AJUSTANDO O TAMANHO DA IMAGEM EM PIXELS MESMO, QUANDO CHEGAR EM UM TAL PONTO AI VC COLOCA O WIDTH EM % NA DIV QUE ENGLOBA A IMAGEM QUE AI VAI DIMINUIR CONFORME A TELA DIMINUIR*/
+
+
+.MainContentWrapper h1 {
+    color: #333;
+    font-size: 5em;
+}
+
+.MainContentWrapper p {
+    color: #333;
+    font-size: 2em;
+    letter-spacing: .2px;
+}
+
+.TourH1 {
+    color: #04ddb2;
+}
+
+.MainContentWrapper .videoImage {
+    border-radius: 50px;
+    transition: .3s;
+}
+.MainContentWrapper .imageContainer{
+    
+    margin: 50px 0px 150px 0px;
+    width: 1000px;
+    height: 600px;
+    position: relative;
+    cursor: pointer; 
+}
+
+.MainContentWrapper .videoImage:hover {
+    border-radius: 50px;
+    transform: scale(1.01);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.MainContentWrapper .buttonDownload {
+    font-size: 1.2em;
+    padding: 1em 3em;
+    border-radius: 30px;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    background: #04ddb2;
+    transition: .3s;
+    cursor: pointer;
+    margin: 20px 0 100px 0;
+}
+
+.MainContentWrapper .buttonDownload:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 1073px) {
+    .MainContentWrapper .imageContainer {
+        width: 800px;
+        height: 500px;
+    }
+    .MainContentWrapper h1 {
+        color: #333;
+        font-size: 3.8em;
+    }
+    
+    .MainContentWrapper p {
+        color: #333;
+        font-size: 1.6em;
+        letter-spacing: .2px;
+    }
+}
+@media (max-width: 931px) {
+    .MainContentWrapper .imageContainer {
+        width: 600px;
+        height: 400px;
+    }
+}
+
+@media (max-width: 638px) {
+    .MainContentWrapper .imageContainer {
+        width: 450px;
+        height: 350px;
+        margin: 50px 0;
+    }
+    .MainContentWrapper h1 {
+        color: #333;
+        font-size: 3.4em;
+    }
+    
+    .MainContentWrapper p {
+        color: #333;
+        font-size: 1.2em;
+        letter-spacing: .2px;
+    }
+}
+@media (max-width: 470px) {
+    .MainContentWrapper .imageContainer {
+        width: 320px;
+        height: 300px;
+        margin: 50px 5px;
+    }
+    .MainContentWrapper h1 {
+        color: #333;
+        font-size: 3em;
+        margin: 0 5px;
+    }
+    
+    .MainContentWrapper p {
+        color: #333;
+        font-size: 1em;
+        letter-spacing: .2px;
+        margin: 0 5px;
+    }
+}
+
+@media (max-width: 341px) {
+    .MainContentWrapper .imageContainer {
+        width: 240px;
+        height: 250px;
+        margin: 50px 0;
+    }
+    .MainContentWrapper h1 {
+        color: #333;
+        font-size: 2.5em;
+    }
+    
+    .MainContentWrapper p {
+        color: #333;
+        font-size: .8em;
+        letter-spacing: .2px;
+    }
+}
