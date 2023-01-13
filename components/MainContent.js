@@ -21,7 +21,6 @@ const MainContent = () => {
         Build your first machine learning model in ten
         <br />
         minutes. No code or experience required.
-        asdasdasdas
       </p>
 
       <div className={styles.imageContainer}>
