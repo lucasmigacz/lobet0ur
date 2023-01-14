@@ -2,16 +2,12 @@ import styles from "../styles/VideoRendering.module.css";
 import { IoCloseOutline } from "react-icons/io5";
 import { useClickAway } from "react-use";
 import { useRef } from "react";
+import { motion, useViewportScroll } from "framer-motion";
 
 const VideoRendering = ({ setVideoState, videoState }) => {
   const handleClose = () => {
     setVideoState((prev) => !prev);
   };
-  // const ref = useRef(null);
-  // useClickAway(ref, () => {
-  //   setVideoState(false);
-  // });
-
   const ref = useRef(null);
   useClickAway(ref, () => {
     setVideoState(false);

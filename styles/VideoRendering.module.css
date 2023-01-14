@@ -25,8 +25,12 @@
 
 .closeIcon {
     position: absolute;
-    display: flex;
-    justify-content: flex-end;
-    align-self: flex-start;
-    cursor: pointer;
+    top: 0;
+    right: 0;
+}
+
+@media (max-width: 1025px) {
+    .closeIcon {
+        display: none;
+    }
 }

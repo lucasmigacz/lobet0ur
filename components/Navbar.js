@@ -2,31 +2,35 @@ import Image from "next/image";
 import Logo from "../public/logo.svg";
 import styles from "../styles/Navbar.module.css";
 import { HiMenu } from "react-icons/hi";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import MenuMobile from "./MenuMobile";
-import { motion, AnimatePresence } from "framer-motion";
 import { HiOutlineX } from "react-icons/hi";
-
+import Link from "next/link";
+import { motion, useViewportScroll, AnimatePresence } from "framer-motion";
 const Navbar = () => {
+  const { scrollYProgress } = useViewportScroll();
   const [menuState, setMenuState] = useState(false);
 
   const handleMenu = () => {
     setMenuState((prev) => !prev);
   };
 
-  const handleClose = () => {
-    setMenuState((prev) => !prev);
-  };
-
   return (
-    <nav className={styles.navbar}>
-      <Image
-        src={Logo}
-        width={100}
-        height={100}
-        className={styles.logo}
-        alt="Logo"
-      />
+    <motion.nav
+      className={styles.navbar}
+      style={{
+        padding: scrollYProgress > 0 ? 550 : 0,
+      }}
+    >
+      <Link href="/">
+        <Image
+          src={Logo}
+          width={100}
+          height={100}
+          className={styles.logo}
+          alt="Logo"
+        />
+      </Link>
       <div className={styles.navbarItems}>
         <ul>
           <li>Overview</li>
@@ -42,12 +46,11 @@ const Navbar = () => {
 
       <AnimatePresence mode="wait" initial={false}>
         {menuState ? (
-
           <MenuMobile
-          menuState={menuState}
-          setMenuState={setMenuState}
-          key="menuMobile"
-        />
+            menuState={menuState}
+            setMenuState={setMenuState}
+            key="menuMobile"
+          />
         ) : (
           <motion.button
             className={styles.hiMenuContainer}
@@ -64,7 +67,7 @@ const Navbar = () => {
           </motion.button>
         )}
       </AnimatePresence>
-    </nav>
+    </motion.nav>
   );
 };
 
